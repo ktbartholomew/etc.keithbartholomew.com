@@ -1,0 +1,55 @@
+@orange       : rgb(242,120,48);
+@purple       : rgb(81,45,100);
+@teal         : rgb(31,155,144);
+
+html, body {
+	background-color: @purple;
+  font-family: "Arvo",Helvetica, Arial, sans-serif;
+  font-weight: 300;
+  color: #FFF;
+}
+
+.parallax-plane{position:relative;}
+
+.wrap {
+  width: 960px;
+  margin:0 auto;
+}
+
+.hl {
+  text-align: center;
+}
+
+#hl1 {
+  position: relative;
+  top:80px;
+  font-size: 48px;
+}
+
+#hl2 {
+  width: 612px;
+  font-size: 32px;
+  position: absolute;
+  top: 580px;
+  left: 50%;
+  margin-left: -306px;
+  text-align: center;
+}
+
+#i1-left,#i1-right{
+  width: 612px;
+  height: 792px;
+  position: absolute;
+  top:200px;
+  left:50%;
+  margin-left: -306px;
+}
+
+#i1-left{
+  background: url(../img/resume-right.png) top left no-repeat;
+}
+
+#i1-right{
+  background: url(../img/resume-left.png) top right no-repeat;
+  background-position: -1px 0px;
+}

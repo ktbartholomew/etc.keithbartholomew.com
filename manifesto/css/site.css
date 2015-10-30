@@ -1,0 +1,167 @@
+html {
+  color: #FFF;
+  background-color: #512d64;
+  background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyRpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoTWFjaW50b3NoKSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDpDNTg5MjI4OEQ2ODIxMUUyQjJFQjlFQkZFN0Y3NUNENCIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDpDNTg5MjI4OUQ2ODIxMUUyQjJFQjlFQkZFN0Y3NUNENCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOjQ1RDFCNEZGRDY4MjExRTJCMkVCOUVCRkU3Rjc1Q0Q0IiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjQ1RDFCNTAwRDY4MjExRTJCMkVCOUVCRkU3Rjc1Q0Q0Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+3+Kn/wAAADFJREFUeNpi/P//vwIDBDxgoAFgYqAxYAT6YNSCUQtGLRi1YNSCUQtGLRi1gHIAEGAAvgRF1SJ/Np8AAAAASUVORK5CYII=');
+  background-attachment: fixed;
+}
+
+html, body {
+  font-family: "Arvo", Helvetica, Arial, sans-serif;
+  font-weight: 300;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+#container {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  box-sizing: border-box;
+  overflow: hidden;
+  overflow-y: auto;
+  color: #FFF;
+  background-color: #512d64;
+  background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyRpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoTWFjaW50b3NoKSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDpDNTg5MjI4OEQ2ODIxMUUyQjJFQjlFQkZFN0Y3NUNENCIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDpDNTg5MjI4OUQ2ODIxMUUyQjJFQjlFQkZFN0Y3NUNENCI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOjQ1RDFCNEZGRDY4MjExRTJCMkVCOUVCRkU3Rjc1Q0Q0IiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjQ1RDFCNTAwRDY4MjExRTJCMkVCOUVCRkU3Rjc1Q0Q0Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+3+Kn/wAAADFJREFUeNpi/P//vwIDBDxgoAFgYqAxYAT6YNSCUQtGLRi1YNSCUQtGLRi1gHIAEGAAvgRF1SJ/Np8AAAAASUVORK5CYII=');
+  background-attachment: fixed; 
+}
+
+.parallax-plane {
+  position: relative;
+}
+.wrap {
+  width: 960px;
+  margin: 0 auto;
+}
+
+.orange { color: rgb(242,120,48);}
+
+.hl {
+  position: absolute;
+  top: 80px;
+  left: 50%;
+  font-size: 48px;
+  width: 960px;
+  margin-left: -480px;
+  text-align: center;
+}
+#hl1 {
+  position: absolute;
+  top: 80px;
+  left: 50%;
+  font-size: 48px;
+  width: 960px;
+  margin-left: -480px;
+}
+#hl2 {
+  width: 612px;
+  font-size: 32px;
+  top: 680px;
+  margin-left: -306px;
+}
+
+#hl3{
+  width: 612px;
+  font-size: 48px;
+  position: absolute;
+  top: 1280px;
+  left: 50%;
+  margin-left: -306px;
+}
+
+#hl4 {
+  top: 1880px;
+  width: 480px;
+  left: 30%;
+  margin-left: -240px;
+  text-align: left;
+}
+
+#i4 {
+  width: 480px;
+  height: 480px;
+  position: absolute;
+  top: 1700px;
+  right: 20%;
+  margin-right: -240px;
+  background: url(../img/database.png) top left no-repeat;
+  background-size: contain;
+}
+
+#hl5 {
+  top: 2480px;
+  width: 480px;
+  margin-left: 0;
+}
+
+#i5 {
+  width: 480px;
+  height: 480px;
+  position: absolute;
+  top: 2260px;
+  left: 20%;
+  margin-left: -240px;
+  background: url(../img/brain.png) top left no-repeat;
+  background-size: contain;
+}
+
+#hl6{ 
+width: 480px;
+top: 2900px;
+margin-left: 0;
+text-align: right;
+left: 0;
+}
+
+#hl7{
+  font-size: 48px;
+  position: absolute;
+  top: 2900px;
+  width: 480px;
+  left: 500px;
+}
+
+#hl8{
+  top: 3800px;
+}
+
+#hl9{
+  top: 4200px;
+}
+
+
+#i1-left, #i1-right {
+  width: 612px;
+  height: 792px;
+  position: absolute;
+  top: 200px;
+  left: 50%;
+  margin-left: -306px;
+}
+#i1-left {
+  background: url(../img/resume-right.png) top left no-repeat;
+}
+#i1-right {
+  background: url(../img/resume-left.png) top right no-repeat;
+  background-position: -1px 0px;
+}
+
+#hl-final {
+  top: 4600px;
+}
+
+#i-final {
+  position: absolute;
+  top: 4700px;
+  left: 0;
+  width: 100%;
+  height: 300px;
+  background: url(//keithbartholomew.com/uploads/headshot-circle.png) center no-repeat;
+  background-size: contain;
+}
+
+#i-filler {
+  position: absolute;
+  top: 5000px;
+}
