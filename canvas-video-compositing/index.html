@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Layered Video</title>
+		<style>
+			body, html {
+				margin: 0;
+				padding: 0;
+			}
+
+			#video-canvas {
+				display: block;
+				height: 56vw;
+				margin: 0 auto;
+        -webkit-transform: translateZ(0);
+        -ms-transform: translateZ(0);
+        -o-transform: translateZ(0);
+        transform: translateZ(0);
+				width: 100vw;
+			}
+		</style>
+		<!--[if IE]>
+  		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+		<![endif]-->
+	</head>
+	<body>
+		<canvas id="video-canvas"></canvas>
+		<script>
+
+      var canvas = document.getElementById('video-canvas');
+      var context = canvas.getContext('2d');
+
+	    var v = document.createElement('video');
+	    v.src = 'https://secure-c.vimeocdn.com/p/video/yosemite_hd_ii_hd.webm';
+	    v.autoplay = true;
+	    v.loop = true;
+	    v.volume = 0;
+      v.currentTime = 25;
+
+	    var cw = canvas.clientWidth;
+	    var ch = canvas.clientHeight;
+	    canvas.width = cw;
+	    canvas.height = ch;
+
+	    v.addEventListener('play', function(){
+	        draw(this,context,cw,ch);
+	    },false);
+
+			function draw(v,c,w,h) {
+					// Save the un-transformed context
+			    c.save();
+			    
+		      // Flip context horizontally.
+		      c.translate(w, 0);
+		      c.scale(-1, 1);
+		      // Add the background video
+			    c.drawImage(v,0,0,w,h);
+          // fc.renderFrame();
+
+
+			    // Flip back and save the un-transformed state again.
+			    c.restore();
+			    c.save();
+
+			    // Draw the mask
+			    c.globalCompositeOperation = 'destination-atop';
+			    var m = document.createElement('img');
+			    m.src = 'img/70kft-logo.png';
+			    c.drawImage(m, w * 0.1, h * 0.25,w * 0.8 ,h * 0.5);
+			    
+			    // add the video over the mask
+			    c.globalCompositeOperation = 'screen';
+			    c.drawImage(v,0,0,w,h);
+
+			    // Flip back for the next frame
+			    c.restore();
+			    
+			    requestAnimationFrame(function () {
+			    	draw(v,c,w,h);
+			    });
+			}
+		</script>
+  </body>
+</html>
